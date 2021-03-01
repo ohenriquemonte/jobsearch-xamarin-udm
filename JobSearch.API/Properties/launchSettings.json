@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
@@ -17,10 +17,16 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "JobSearch.API": {
+    "Custom": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "applicationUrl": "https://localhost:38844;http://localhost:35489",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "JobSearch.API": {
+      "commandName": "Project",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

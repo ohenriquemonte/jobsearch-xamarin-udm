@@ -29,8 +29,7 @@ namespace JobSearch.API
 		{
 			services.AddDbContext<JobSearchContext>(options =>
 			{
-				Configuration.GetConnectionString("DefaultConnection");
-				options.UseSqlite();
+				options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
 			});
 			services.AddControllers();
 		}
