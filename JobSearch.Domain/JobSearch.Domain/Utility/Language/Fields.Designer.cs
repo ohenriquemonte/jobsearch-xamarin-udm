@@ -99,9 +99,9 @@ namespace JobSearch.Domain.Utility.Language {
         /// <summary>
         ///   Looks up a localized string similar to Regime.
         /// </summary>
-        public static string ContactType {
+        public static string ContractType {
             get {
-                return ResourceManager.GetString("ContactType", resourceCulture);
+                return ResourceManager.GetString("ContractType", resourceCulture);
             }
         }
         

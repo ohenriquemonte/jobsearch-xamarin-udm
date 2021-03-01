@@ -129,7 +129,7 @@
   <data name="CompanyDescription" xml:space="preserve">
     <value>Descrição da Empresa</value>
   </data>
-  <data name="ContactType" xml:space="preserve">
+  <data name="ContractType" xml:space="preserve">
     <value>Regime</value>
   </data>
   <data name="Email" xml:space="preserve">
