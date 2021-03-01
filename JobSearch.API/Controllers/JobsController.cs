@@ -14,6 +14,7 @@ namespace JobSearch.API.Controllers
 	public class JobsController : Controller
 	{
 
+		private int numberOfRegistryByPage = 5;
 		private JobSearchContext _data;
 
 		public JobsController(JobSearchContext data)
@@ -22,21 +23,27 @@ namespace JobSearch.API.Controllers
 		}
 
 		[HttpGet]
-		public IEnumerable<Job> GetJobs(string word, string cityState)
+		public IEnumerable<Job> GetJobs(string word, string cityState, int numberOfPage = 1)
 		{
+			if (word == null)
+				word = "";
 
-			// TODO - Add Paginação (InfinityScroll)
-			// TODO - Limitar pesquisa por período
-			// TODO - Tratar situação em que os parâmetros são nulos (null)
+			if (cityState == null)
+				cityState = "";
 
-			return _data.Jobs.Where(a => 
-				a.CityState.ToLower().Contains(cityState) &&
-				(
-					a.JobTitle.ToLower().Contains(word) ||
-					a.TecnologyTools.ToLower().Contains(word) ||
-					a.Company.ToLower().Contains(word)
+			return _data.Jobs
+				.Where(a => 
+					a.PublicationDate >= DateTime.Now.AddDays(-15) &&
+					a.CityState.ToLower().Contains(cityState.ToLower()) &&
+					(
+						a.JobTitle.ToLower().Contains(word.ToLower()) ||
+						a.TecnologyTools.ToLower().Contains(word.ToLower()) ||
+						a.Company.ToLower().Contains(word.ToLower())
+					)
 				)
-			).ToList<Job>();
+				.Skip(numberOfRegistryByPage * (numberOfPage - 1))
+				.Take(numberOfRegistryByPage)
+				.ToList<Job>();
 		}
 
 		// api/Jobs/1

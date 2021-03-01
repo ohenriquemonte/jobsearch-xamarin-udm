@@ -44,8 +44,8 @@ namespace JobSearch.Domain.Models
 		[ForeignKey("UserId")]
 		public User User { get; set; }
 
-		public Job()
-		{
-		}
+		//public Job()
+		//{
+		//}
 	}
 }
