@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JobSearch.Domain\JobSearch.Domain\JobSearch.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Utility\" />
+    <Folder Include="Utility\Fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Utility\Fonts\Montserrat-Bold.ttf" />
+    <None Remove="Utility\Fonts\Montserrat-Light.ttf" />
+    <None Remove="Utility\Fonts\Montserrat-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Utility\Fonts\Montserrat-Bold.ttf" />
+    <EmbeddedResource Include="Utility\Fonts\Montserrat-Light.ttf" />
+    <EmbeddedResource Include="Utility\Fonts\Montserrat-Regular.ttf" />
+  </ItemGroup>
+</Project>
