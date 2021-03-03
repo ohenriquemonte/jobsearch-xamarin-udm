@@ -19,10 +19,12 @@
 
 			<Style TargetType="ContentPage" ApplyToDerivedTypes="True">
 				<Setter Property="Padding" Value="15" />
+				<Setter Property="NavigationPage.HasNavigationBar" Value="False" />
 			</Style>
 
 			<Style TargetType="Frame" Class="EntryFrame">
-				<Setter Property="Padding" Value="0" />
+				<Setter Property="BackgroundColor" Value="{StaticResource GrayBlue}" />
+				<Setter Property="Padding" Value="10, 0" />
 				<Setter Property="CornerRadius" Value="5" />
 				<Setter Property="HasShadow" Value="False" />
 			</Style>
@@ -35,7 +37,6 @@
 			</Style>
 
 			<Style TargetType="Entry">
-				<Setter Property="BackgroundColor" Value="{StaticResource GrayBlue}" />
 				<Setter Property="PlaceholderColor" Value="{StaticResource DarkGrayBlue}" />
 				<Setter Property="TextColor" Value="{StaticResource Black}" />
 				<Setter Property="FontFamily" Value="MontserratRegular" />

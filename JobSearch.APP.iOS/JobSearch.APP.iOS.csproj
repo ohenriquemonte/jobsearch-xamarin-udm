@@ -95,6 +95,22 @@
     <ImageAsset Include="Assets.xcassets\Logo.imageset\Logo%402x.png" />
     <ImageAsset Include="Assets.xcassets\Logo.imageset\Logo%403x.png" />
     <InterfaceDefinition Include="Resources\SplashScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\Back.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Back.imageset\back.png" />
+    <ImageAsset Include="Assets.xcassets\Back.imageset\back%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Back.imageset\back%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Ok.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Ok.imageset\ok.png" />
+    <ImageAsset Include="Assets.xcassets\Ok.imageset\ok%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Ok.imageset\ok%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Pin.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Pin.imageset\pin.png" />
+    <ImageAsset Include="Assets.xcassets\Pin.imageset\pin%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Pin.imageset\pin%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Search.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Search.imageset\search.png" />
+    <ImageAsset Include="Assets.xcassets\Search.imageset\search%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Search.imageset\search%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -119,6 +135,10 @@
     <Folder Include="Assets.xcassets\AppIcon_old.appiconset\" />
     <Folder Include="Assets.xcassets\AppLogo.appiconset\" />
     <Folder Include="Assets.xcassets\Logo.imageset\" />
+    <Folder Include="Assets.xcassets\Back.imageset\" />
+    <Folder Include="Assets.xcassets\Ok.imageset\" />
+    <Folder Include="Assets.xcassets\Pin.imageset\" />
+    <Folder Include="Assets.xcassets\Search.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

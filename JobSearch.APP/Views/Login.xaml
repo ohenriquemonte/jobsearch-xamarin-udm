@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" NavigationPage.HasNavigationBar="False" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JobSearch.APP.Views.Login">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JobSearch.APP.Views.Login">
 	<ContentPage.Content>
 		<StackLayout>
 			<Label Text="JobSearch" Style="{StaticResource Title}"/>
@@ -24,7 +24,7 @@
 				</Frame>
 
 				<Button Text="Acessar" Grid.Row="2" />
-				<Button Text="Cadastrar" Grid.Row="2" Grid.Column="1" />
+				<Button Text="Cadastrar" Grid.Row="2" Grid.Column="1" Clicked="GoRegister" />
 			</Grid>
 		</StackLayout>
 	</ContentPage.Content>
