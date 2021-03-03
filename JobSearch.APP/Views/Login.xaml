@@ -23,7 +23,7 @@
 					<Entry Placeholder="Senha" />
 				</Frame>
 
-				<Button Text="Acessar" Grid.Row="2" />
+				<Button Text="Acessar" Grid.Row="2" Clicked="GoStart" />
 				<Button Text="Cadastrar" Grid.Row="2" Grid.Column="1" Clicked="GoRegister" />
 			</Grid>
 		</StackLayout>
