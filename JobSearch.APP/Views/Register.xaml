@@ -8,7 +8,7 @@
 					<ColumnDefinition />
 				</Grid.ColumnDefinitions>
 
-				<Button Text="&#60;" HeightRequest="10" Clicked="GoBack" />
+				<ImageButton Style="{StaticResource BackButton}"/>
 				<Label Text="JobSearch" Style="{StaticResource Title}" Grid.Column="1"/>
 			</Grid>
 
