@@ -21,5 +21,15 @@ namespace JobSearch.APP.Views
 		{
 			Navigation.PushAsync(new RegisterJob());
 		}
+
+		void FocusPesquisa(System.Object sender, System.EventArgs e)
+		{
+			TxtSearch.Focus();
+		}
+
+		void FocusCityState(System.Object sender, System.EventArgs e)
+		{
+			TxtCityState.Focus();
+		}
 	}
 }

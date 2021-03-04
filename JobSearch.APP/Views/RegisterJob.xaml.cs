@@ -16,5 +16,11 @@ namespace JobSearch.APP.Views
 		{
 			Navigation.PopAsync();
 		}
+
+		void Save(System.Object sender, System.EventArgs e)
+		{
+			DisplayAlert("Vaga Salva", "A vaga foi cadastrada com sucesso!", "OK");
+			Navigation.PopAsync();
+		}
 	}
 }

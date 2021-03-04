@@ -35,10 +35,10 @@
 			</Style>
 
 			<Style TargetType="Label" x:Key="Title">
-				<Setter Property="FontSize" Value="20" />
 				<Setter Property="FontFamily" Value="MontserratBold" />
+				<Setter Property="FontSize" Value="20" />
 				<Setter Property="TextColor" Value="{StaticResource Purple}" />
-				<Setter Property="Margin" Value="0, 0, 0, 10" />
+				<Setter Property="VerticalTextAlignment" Value="Center" />
 			</Style>
 
 			<Style TargetType="Entry">
@@ -63,13 +63,25 @@
 				<Setter Property="CornerRadius" Value="5" />
 			</Style>
 
+			<Style TargetType="Button" Class="AddButton">
+				<Setter Property="HeightRequest" Value="35" />
+				<Setter Property="VerticalOptions" Value="Start" />
+			</Style>
+
 			<Style TargetType="ImageButton" x:Key="BackButton">
 				<Setter Property="BackgroundColor" Value="Transparent" />
-				<Setter Property="WidthRequest" Value="29" />
-				<Setter Property="HeightRequest" Value="10" />
-				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="HeightRequest" Value="20" />
+				<Setter Property="VerticalOptions" Value="Center" />
 				<Setter Property="Padding" Value="0" />
 				<Setter Property="Source" Value="back.png" />
+			</Style>
+
+			<Style TargetType="ImageButton" x:Key="OkButton">
+				<Setter Property="BackgroundColor" Value="Transparent" />
+				<Setter Property="WidthRequest" Value="30" />
+				<Setter Property="HorizontalOptions" Value="End" />
+				<Setter Property="Padding" Value="0" />
+				<Setter Property="Source" Value="ok.png" />
 			</Style>
 
 			<Style TargetType="Label" x:Key="BaseLabel">
@@ -99,6 +111,21 @@
 				<Setter Property="FontSize" Value="8" />
 				<Setter Property="HorizontalOptions" Value="End" />
 				<Setter Property="VerticalOptions" Value="End" />
+			</Style>
+
+			<!-- ícones -->
+			<Style TargetType="ImageButton" Class="SearchButton">
+				<Setter Property="BackgroundColor" Value="Transparent" />
+				<Setter Property="Source" Value="search.png" />
+				<Setter Property="WidthRequest" Value="20" />
+				<Setter Property="HorizontalOptions" Value="Start" />
+			</Style>
+
+			<Style TargetType="ImageButton" Class="PinButton">
+				<Setter Property="BackgroundColor" Value="Transparent" />
+				<Setter Property="Source" Value="pin.png" />
+				<Setter Property="WidthRequest" Value="20" />
+				<Setter Property="HorizontalOptions" Value="Start" />
 			</Style>
 		</ResourceDictionary>
 	</Application.Resources>
