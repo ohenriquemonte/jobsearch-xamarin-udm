@@ -16,5 +16,10 @@ namespace JobSearch.APP.Views
 		{
 			Navigation.PushAsync(new Visualizer());
 		}
+
+		void GoRegisterJob(System.Object sender, System.EventArgs e)
+		{
+			Navigation.PushAsync(new RegisterJob());
+		}
 	}
 }

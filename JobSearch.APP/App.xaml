@@ -19,7 +19,7 @@
 
 			<Style TargetType="ContentPage" ApplyToDerivedTypes="True">
 				<Setter Property="BackgroundColor" Value="{StaticResource White}" />
-				<Setter Property="Padding" Value="15" />
+				<Setter Property="Padding" Value="15, 15, 15, 0" />
 				<Setter Property="NavigationPage.HasNavigationBar" Value="False" />
 			</Style>
 
@@ -42,6 +42,13 @@
 			</Style>
 
 			<Style TargetType="Entry">
+				<Setter Property="PlaceholderColor" Value="{StaticResource DarkGrayBlue}" />
+				<Setter Property="TextColor" Value="{StaticResource Black}" />
+				<Setter Property="FontFamily" Value="Montserrat" />
+				<Setter Property="FontSize" Value="12" />
+			</Style>
+
+			<Style TargetType="Editor">
 				<Setter Property="PlaceholderColor" Value="{StaticResource DarkGrayBlue}" />
 				<Setter Property="TextColor" Value="{StaticResource Black}" />
 				<Setter Property="FontFamily" Value="Montserrat" />
