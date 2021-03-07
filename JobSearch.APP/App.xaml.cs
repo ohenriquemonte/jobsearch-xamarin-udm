@@ -4,26 +4,37 @@ using Xamarin.Forms.Xaml;
 
 namespace JobSearch.APP
 {
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
+	public partial class App : Application
+	{
+		public App()
+		{
+			InitializeComponent();
 
-            //MainPage = new MainPage();
-            MainPage = new NavigationPage(new Views.Login());
-        }
 
-        protected override void OnStart()
-        {
-        }
+			// Logout
+			// App.Current.Properties.Remove("User");
 
-        protected override void OnSleep()
-        {
-        }
+			if (App.Current.Properties.ContainsKey("User"))
+			{
+				MainPage = new NavigationPage(new Views.Start());
+			}
+			else
+			{
+				// MainPage = new MainPage();
+				MainPage = new NavigationPage(new Views.Login());
+			}
+		}
 
-        protected override void OnResume()
-        {
-        }
-    }
+		protected override void OnStart()
+		{
+		}
+
+		protected override void OnSleep()
+		{
+		}
+
+		protected override void OnResume()
+		{
+		}
+	}
 }
