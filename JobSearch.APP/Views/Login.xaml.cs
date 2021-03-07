@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using JobSearch.APP.Models;
 using JobSearch.APP.Services;
 using JobSearch.Domain.Models;
 using Newtonsoft.Json;
@@ -29,18 +30,18 @@ namespace JobSearch.APP.Views
 			string email = TxtEmail.Text;
 			string password = TxtPassword.Text;
 
-			User user = await _service.GetUser(email, password);
+			ResponseService<User> responseService = await _service.GetUser(email, password);
 
-			if (user == null)
+			if (responseService.IsSuccess)
 			{
-				await DisplayAlert("Ops!", "Nenhum usuário encontrado!", "OK");
-			}
-			else
-			{
-				App.Current.Properties.Add("User", JsonConvert.SerializeObject(user));
+				App.Current.Properties.Add("User", JsonConvert.SerializeObject(responseService.Data));
 				await App.Current.SavePropertiesAsync();
 
 				App.Current.MainPage = new NavigationPage(new Start());
+			}
+			else
+			{
+				await DisplayAlert("Ops!", "Nenhum usuário encontrado!", "OK");
 			}
 		}
 	}

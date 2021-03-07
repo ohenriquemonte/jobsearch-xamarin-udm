@@ -25,6 +25,7 @@
     <Folder Include="Utility\" />
     <Folder Include="Utility\Fonts\" />
     <Folder Include="Services\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Utility\Fonts\Montserrat-Bold.ttf" />
