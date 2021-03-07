@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JobSearch.APP.Views.Start">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+			 x:Class="JobSearch.APP.Views.Start">
 	<ContentPage.Content>
 		<StackLayout>
 			<Grid>
@@ -60,10 +63,10 @@
 				</Label.FormattedText>
 			</Label>
 
-			<Frame BorderColor="{StaticResource GrayBlue}" HasShadow="True" Padding="15" Margin="4">
-				<Frame.GestureRecognizers>
+			<pancake:PancakeView BackgroundColor="{StaticResource White}" BorderColor="{StaticResource GrayBlue}" Elevation="3" Padding="15" Margin="4">
+				<pancake:PancakeView.GestureRecognizers>
 					<TapGestureRecognizer Tapped="GoVisualizer"/>
-				</Frame.GestureRecognizers>
+				</pancake:PancakeView.GestureRecognizers>
 
 				<Grid RowSpacing="0">
 					<Grid.ColumnDefinitions>
@@ -98,7 +101,7 @@
 						</Label.FormattedText>
 					</Label>
 				</Grid>
-			</Frame>
+			</pancake:PancakeView>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
