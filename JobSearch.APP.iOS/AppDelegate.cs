@@ -25,7 +25,8 @@ namespace JobSearch.APP.iOS
 #if ENABLE_TEST_CLOUD
             Xamarin.Calabash.Start();
 #endif
-            global::Xamarin.Forms.Forms.Init();
+			Rg.Plugins.Popup.Popup.Init();
+			global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

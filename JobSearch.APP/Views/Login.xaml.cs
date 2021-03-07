@@ -6,6 +6,8 @@ using JobSearch.APP.Services;
 using JobSearch.Domain.Models;
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using Rg.Plugins.Popup.Extensions;
+using JobSearch.APP.Utility.Load;
 
 namespace JobSearch.APP.Views
 {
@@ -30,6 +32,10 @@ namespace JobSearch.APP.Views
 			string email = TxtEmail.Text;
 			string password = TxtPassword.Text;
 
+			await Navigation.PushPopupAsync(new Loading());
+
+			//await Task.Delay(3000);
+
 			ResponseService<User> responseService = await _service.GetUser(email, password);
 
 			if (responseService.IsSuccess)
@@ -43,6 +49,8 @@ namespace JobSearch.APP.Views
 			{
 				await DisplayAlert("Ops!", "Nenhum usuário encontrado!", "OK");
 			}
+
+			await Navigation.PopAllPopupAsync();
 		}
 	}
 }
