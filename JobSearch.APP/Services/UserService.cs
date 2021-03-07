@@ -9,7 +9,7 @@ namespace JobSearch.APP.Services
 	{
 		public async Task<User> GetUser(string email, string password)
 		{
-			HttpResponseMessage response = await _client.GetAsync($"{BaseAPIUrl}/api/Users?email{email}&password={password}");
+			HttpResponseMessage response = await _client.GetAsync($"{BaseAPIUrl}/api/Users?email={email}&password={password}");
 
 			User user = null;
 			if (response.IsSuccessStatusCode)
