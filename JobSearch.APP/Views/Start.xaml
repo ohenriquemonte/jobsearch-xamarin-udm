@@ -57,15 +57,15 @@
 			<Label>
 				<Label.FormattedText>
 					<FormattedString>
-						<Span Text="2 resultados em " Style="{StaticResource JobTitle}" />
-						<Span Text="São Paulo, SP" Style="{StaticResource CompanyCityStateLabel}" />
+						<Span Text="2 resultados em " Style="{StaticResource TextPrimary}" />
+						<Span Text="São Paulo, SP" Style="{StaticResource TextSecondary}" />
 					</FormattedString>
 				</Label.FormattedText>
 			</Label>
 
 			<pancake:PancakeView BackgroundColor="{StaticResource White}" BorderColor="{StaticResource GrayBlue}" Elevation="3" Padding="15" Margin="4">
 				<pancake:PancakeView.GestureRecognizers>
-					<TapGestureRecognizer Tapped="GoVisualizer"/>
+					<TapGestureRecognizer Tapped="GoVisualizer" />
 				</pancake:PancakeView.GestureRecognizers>
 
 				<Grid RowSpacing="0">
@@ -78,9 +78,9 @@
 						<RowDefinition />
 					</Grid.RowDefinitions>
 
-					<Label Text="Digital Ocean" Grid.ColumnSpan="2" Style="{StaticResource CompanyCityStateLabel}"/>
-					<Label Text="Back-End Developer" Grid.Row="1" Style="{StaticResource JobTitle}" />
-					<Label Text="São Paulo, SP" Grid.Row="2" Style="{StaticResource CompanyCityStateLabel}" />
+					<Label Text="Digital Ocean" Grid.ColumnSpan="2" Style="{StaticResource TextSecondary}"/>
+					<Label Text="Back-End Developer" Grid.Row="1" Style="{StaticResource TextPrimary}" />
+					<Label Text="São Paulo, SP" Grid.Row="2" Style="{StaticResource TextSecondary}" />
 					<Label Text="Tags" Grid.Row="3" />
 
 					<Label Text="7.0-11k BRL" Grid.Row="1" Grid.Column="1">

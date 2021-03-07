@@ -33,9 +33,9 @@
 							<RowDefinition />
 						</Grid.RowDefinitions>
 
-						<Label Text="Digital Ocean" Style="{StaticResource CompanyCityStateLabel}"/>
-						<Label Text="Back-End Developer" Grid.Row="1" Style="{StaticResource JobTitle}" />
-						<Label Text="São Paulo, SP" Grid.Row="2" Style="{StaticResource CompanyCityStateLabel}" />
+						<Label Text="Digital Ocean" Style="{StaticResource TextSecondary}"/>
+						<Label Text="Back-End Developer" Grid.Row="1" Style="{StaticResource TextPrimary}" />
+						<Label Text="São Paulo, SP" Grid.Row="2" Style="{StaticResource TextSecondary}" />
 
 
 						<Label Text="7.0-11k BRL" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
@@ -47,10 +47,10 @@
 							</Label.FormattedText>
 						</Label>
 
-						<Label Text="CLT" Grid.Row="4" Style="{StaticResource JobTitle}" />
+						<Label Text="CLT" Grid.Row="4" Style="{StaticResource TextPrimary}" />
 						<Label Text="Tags" Grid.Row="5" />
 
-						<Label Grid.Row="0" Grid.Column="1" Style="{StaticResource JobTitle}" HorizontalOptions="End">
+						<Label Grid.Row="0" Grid.Column="1" Style="{StaticResource TextPrimary}" HorizontalOptions="End">
 							<Label.FormattedText>
 								<FormattedString>
 									<Span Text="Pub. " />
@@ -69,21 +69,21 @@
 						</Label>
 					</Grid>
 
-					<Label Style="{StaticResource JobTitle}" Text="Interesados enviar e-mail para: " />
-					<Label Style="{StaticResource CompanyCityStateLabel}" Text="job@digitalocean.com" />
+					<Label Style="{StaticResource TextPrimary}" Text="Interesados enviar e-mail para: " />
+					<Label Style="{StaticResource TextSecondary}" Text="job@digitalocean.com" />
 					<BoxView Color="#F3F5F7" HeightRequest="1" />
 
-					<Label Style="{StaticResource MoneyLabel}" Text="Descrição da empresa" />
-					<Label Style="{StaticResource JobTitle}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
-					<Label Style="{StaticResource JobTitle}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
-					<Label Style="{StaticResource JobTitle}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
-					<Label Style="{StaticResource JobTitle}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
+					<Label Style="{StaticResource TitlePrimary}" Text="Descrição da empresa" />
+					<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
+					<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
+					<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
+					<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
 
-					<Label Style="{StaticResource MoneyLabel}" Text="Descrição do trabalho" />
-					<Label Style="{StaticResource JobTitle}" Text="Implementar novas tecnologias de gerenciamento de servidores, fazer integração com ferramentas de VM." />
+					<Label Style="{StaticResource TitlePrimary}" Text="Descrição do trabalho" />
+					<Label Style="{StaticResource TextPrimary}" Text="Implementar novas tecnologias de gerenciamento de servidores, fazer integração com ferramentas de VM." />
 
-					<Label Style="{StaticResource MoneyLabel}" Text="Benefícios" />
-					<Label Style="{StaticResource JobTitle}" Text="Vale transporte Vale alimentação" />
+					<Label Style="{StaticResource TitlePrimary}" Text="Benefícios" />
+					<Label Style="{StaticResource TextPrimary}" Text="Vale transporte Vale alimentação" />
 				</StackLayout>
 			</ScrollView>
 		</StackLayout>
