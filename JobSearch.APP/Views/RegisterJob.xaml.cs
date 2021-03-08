@@ -58,10 +58,9 @@ namespace JobSearch.APP.Views
 
 			if (responseService.IsSuccess)
 			{
-				App.Current.Properties.Add("User", JsonConvert.SerializeObject(responseService.Data));
-				await App.Current.SavePropertiesAsync();
-
-				App.Current.MainPage = new NavigationPage(new Start());
+				await Navigation.PopAllPopupAsync();
+				await DisplayAlert("Vaga Salva", "A vaga foi cadastrada com sucesso!", "OK");
+				await Navigation.PopAsync();
 			}
 			else
 			{
@@ -86,15 +85,8 @@ namespace JobSearch.APP.Views
 					await DisplayAlert("Ops!", "Ocorreu um erro inesperado! Tente Novamente mais tarde.", "OK");
 				}
 
+				await Navigation.PopAllPopupAsync();
 			}
-
-			await Navigation.PopAllPopupAsync();
-
-
-
-
-			DisplayAlert("Vaga Salva", "A vaga foi cadastrada com sucesso!", "OK");
-			Navigation.PopAsync();
 		}
 	}
 }
