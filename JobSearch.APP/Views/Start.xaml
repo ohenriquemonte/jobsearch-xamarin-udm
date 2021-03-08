@@ -102,6 +102,8 @@
 					</Label>
 				</Grid>
 			</pancake:PancakeView>
+
+			<Button Text="Logout" Clicked="Logout" VerticalOptions="EndAndExpand" />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

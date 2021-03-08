@@ -31,5 +31,11 @@ namespace JobSearch.APP.Views
 		{
 			TxtCityState.Focus();
 		}
+
+		void Logout(System.Object sender, System.EventArgs e)
+		{
+			App.Current.Properties.Remove("User");
+			Navigation.PushAsync(new Login());
+		}
 	}
 }

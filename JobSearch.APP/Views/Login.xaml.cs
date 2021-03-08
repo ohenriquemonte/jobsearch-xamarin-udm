@@ -18,7 +18,6 @@ namespace JobSearch.APP.Views
 		public Login()
 		{
 			InitializeComponent();
-
 			_service = new UserService();
 		}
 
@@ -47,7 +46,15 @@ namespace JobSearch.APP.Views
 			}
 			else
 			{
-				await DisplayAlert("Ops!", "Nenhum usuário encontrado!", "OK");
+				if (responseService.StatusCode == 404)
+				{
+					await DisplayAlert("Ops!", "Nenhum usuário encontrado!", "OK");
+				}
+				else
+				{
+					await DisplayAlert("Ops!", "Ocorreu um erro inesperado! Tente Novamente mais tarde.", "OK");
+				}
+
 			}
 
 			await Navigation.PopAllPopupAsync();
