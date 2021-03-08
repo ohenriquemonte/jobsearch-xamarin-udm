@@ -65,7 +65,7 @@
 				</Label.FormattedText>
 			</Label>
 
-			<CollectionView x:Name="ListOfJobs">
+			<CollectionView x:Name="ListOfJobs" RemainingItemsThreshold="-1" RemainingItemsThresholdReached="InfinitySearch">
 				<CollectionView.EmptyView>
 					<Label Text="0 resultados" Style="{StaticResource TextPrimary}"  VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
 				</CollectionView.EmptyView>

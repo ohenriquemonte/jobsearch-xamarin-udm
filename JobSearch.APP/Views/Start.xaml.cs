@@ -13,7 +13,8 @@ namespace JobSearch.APP.Views
 	public partial class Start : ContentPage
 	{
 		private JobService _service;
-		private ObservableCollection<Job> _listOfData;
+		private ObservableCollection<Job> _listOfJobs;
+		private SearchParams _searchParams;
 
 		public Start()
 		{
@@ -55,12 +56,15 @@ namespace JobSearch.APP.Views
 			string word = TxtSearch.Text;
 			string cityState = TxtCityState.Text;
 
-			ResponseService<List<Job>> responseService = await _service.GetJobs(word, cityState);
+			_searchParams = new SearchParams() { Word = word, CityState = cityState, NumberOfPage = 1 };
+
+			ResponseService<List<Job>> responseService = await _service.GetJobs(_searchParams.Word, _searchParams.CityState, _searchParams.NumberOfPage);
 
 			if (responseService.IsSuccess)
 			{
-				_listOfData = new ObservableCollection<Job>(responseService.Data);
-				ListOfJobs.ItemsSource = _listOfData;
+				_listOfJobs = new ObservableCollection<Job>(responseService.Data);
+				ListOfJobs.ItemsSource = _listOfJobs;
+				ListOfJobs.RemainingItemsThreshold = 1;
 			}
 			else
 			{
@@ -84,6 +88,23 @@ namespace JobSearch.APP.Views
 				//}
 
 				//await Navigation.PopAllPopupAsync();
+			}
+		}
+
+		private async void InfinitySearch(System.Object sender, System.EventArgs e)
+		{
+			_searchParams.NumberOfPage++;
+
+			ResponseService<List<Job>> responseService = await _service.GetJobs(_searchParams.Word, _searchParams.CityState, _searchParams.NumberOfPage);
+
+			if (responseService.IsSuccess)
+			{
+				var listOfJobsFromService = responseService.Data;
+
+				foreach (var item in listOfJobsFromService)
+				{
+					_listOfJobs.Add(item);
+				}
 			}
 		}
 	}
