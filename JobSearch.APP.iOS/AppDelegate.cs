@@ -25,7 +25,12 @@ namespace JobSearch.APP.iOS
 #if ENABLE_TEST_CLOUD
             Xamarin.Calabash.Start();
 #endif
-			Rg.Plugins.Popup.Popup.Init();
+
+            Xamarin.Forms.Forms.SetFlags(new string[] {
+                "RadioButton_Experimental"
+            });
+
+            Rg.Plugins.Popup.Popup.Init();
 			global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

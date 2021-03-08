@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using JobSearch.APP.Models;
 using JobSearch.Domain.Models;
+using Newtonsoft.Json;
 
 namespace JobSearch.APP.Services
 {
@@ -37,20 +39,27 @@ namespace JobSearch.APP.Services
 			return job;
 		}
 
-		public async Task<Job> AddJob(Job job)
+		public async Task<ResponseService<Job>> AddJob(Job job)
 		{
 			HttpResponseMessage response = await _client.PostAsJsonAsync($"{BaseAPIUrl}/api/Jobs", job);
 
+			ResponseService<Job> responseService = new ResponseService<Job>();
+			responseService.IsSuccess = response.IsSuccessStatusCode;
+			responseService.StatusCode = (int)response.StatusCode;
+
 			if (response.IsSuccessStatusCode)
 			{
-				job = await response.Content.ReadAsAsync<Job>();
+
+				responseService.Data = await response.Content.ReadAsAsync<Job>();
 			}
 			else
 			{
-				job = null;
+				string problemResponse = await response.Content.ReadAsStringAsync();
+				var errors = JsonConvert.DeserializeObject<ResponseService<Job>>(problemResponse);
+				responseService.Errors = errors.Errors;
 			}
 
-			return job;
+			return responseService;
 		}
 
 		public JobService()
