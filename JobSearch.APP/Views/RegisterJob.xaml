@@ -37,15 +37,14 @@
 					</Frame>
 
 					<Frame StyleClass="EditorFrame">
-						<Entry x:Name="TxtInitialSalary" Placeholder="Salário Inicial (reais)" />
+						<Entry x:Name="TxtInitialSalary" Keyboard="Numeric" Placeholder="Salário Inicial (reais)" />
 					</Frame>
 
 					<Frame StyleClass="EditorFrame">
-						<Entry x:Name="TxtFinalSalary" Placeholder="Salário Final (reais)" />
+						<Entry x:Name="TxtFinalSalary" Keyboard="Numeric" Placeholder="Salário Final (reais)" />
 					</Frame>
 
 					<Frame StyleClass="EditorFrame">
-						<!--<Entry x:Name="TxtContractType" Placeholder="Regime" />-->
 						<StackLayout Orientation="Horizontal">
 							<Label Text="Regime" HorizontalOptions="FillAndExpand" Style="{StaticResource LabelEntry}" />
 

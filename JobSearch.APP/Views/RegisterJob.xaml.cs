@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using JobSearch.APP.Models;
 using JobSearch.APP.Services;
+using JobSearch.APP.Utility.Converters;
 using JobSearch.APP.Utility.Load;
 using JobSearch.Domain.Models;
 using Newtonsoft.Json;
@@ -28,8 +29,9 @@ namespace JobSearch.APP.Views
 
 		private async void Save(System.Object sender, System.EventArgs e)
 		{
-			TxtMessages.Text = String.Empty;
+			// TODO - Adicionar Validação
 
+			TxtMessages.Text = String.Empty;
 
 			User user = JsonConvert.DeserializeObject<User>(App.Current.Properties["User"].ToString());
 
@@ -38,7 +40,8 @@ namespace JobSearch.APP.Views
 				Company = TxtCompany.Text,
 				JobTitle = TxtJobTitle.Text,
 				CityState = TxtCityState.Text,
-				//Salary = TxtSalary.Text,
+				InitialSalary = TextToDouble.ToDouble(TxtInitialSalary.Text),
+				FinalSalary = TextToDouble.ToDouble(TxtFinalSalary.Text),
 				ContractType = (RBCLT.IsChecked) ? "CLT" : "PJ",
 				TecnologyTools = TxtTecnologyTools.Text,
 				CompanyDescription = TxtCompanyDescription.Text,
