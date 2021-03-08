@@ -114,6 +114,10 @@
     <ImageAsset Include="Assets.xcassets\Search.imageset\search.png" />
     <ImageAsset Include="Assets.xcassets\Search.imageset\search%402x.png" />
     <ImageAsset Include="Assets.xcassets\Search.imageset\search%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Logout.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Logout.imageset\logout.png" />
+    <ImageAsset Include="Assets.xcassets\Logout.imageset\logout%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Logout.imageset\logout%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -150,6 +154,7 @@
     <Folder Include="Assets.xcassets\Search.imageset\" />
     <Folder Include="Utility\" />
     <Folder Include="Utility\Controls\" />
+    <Folder Include="Assets.xcassets\Logout.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

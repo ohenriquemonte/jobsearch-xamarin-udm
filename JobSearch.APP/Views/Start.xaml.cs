@@ -35,7 +35,8 @@ namespace JobSearch.APP.Views
 		void Logout(System.Object sender, System.EventArgs e)
 		{
 			App.Current.Properties.Remove("User");
-			Navigation.PushAsync(new Login());
+			App.Current.SavePropertiesAsync();
+			App.Current.MainPage = new Login();
 		}
 	}
 }

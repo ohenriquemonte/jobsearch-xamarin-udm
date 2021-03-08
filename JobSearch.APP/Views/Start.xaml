@@ -8,11 +8,13 @@
 			<Grid>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition />
+					<ColumnDefinition Width="50" />
 					<ColumnDefinition Width="100"/>
 				</Grid.ColumnDefinitions>
 
 				<Label Text="JobSearch" Style="{StaticResource Title}"/>
-				<Button Text="+ Add Job" Grid.Column="1" StyleClass="AddButton" Clicked="GoRegisterJob"/>
+				<Button Grid.Column="1" StyleClass="AddButton" ImageSource="logout" Clicked="Logout" />
+				<Button Text="+ Add Job" Grid.Column="2" StyleClass="AddButton" Clicked="GoRegisterJob" />
 			</Grid>
 			<BoxView Color="#D7CCFF" HeightRequest="1" />
 
@@ -102,8 +104,6 @@
 					</Label>
 				</Grid>
 			</pancake:PancakeView>
-
-			<Button Text="Logout" Clicked="Logout" VerticalOptions="EndAndExpand" />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
