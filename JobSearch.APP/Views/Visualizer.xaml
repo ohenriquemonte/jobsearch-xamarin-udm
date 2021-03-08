@@ -41,7 +41,7 @@
 						<Label Text="7.0-11k BRL" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
 							<Label.FormattedText>
 								<FormattedString>
-									<Span Text="7.0-11k" Style="{StaticResource MoneyLabel}" />
+									<Span Text="7.0000-11.000" Style="{StaticResource MoneyLabel}" />
 									<Span Text=" BRL" Style="{StaticResource CurrencyLabel}" />
 								</FormattedString>
 							</Label.FormattedText>

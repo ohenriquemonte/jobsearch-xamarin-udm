@@ -37,7 +37,11 @@
 					</Frame>
 
 					<Frame StyleClass="EditorFrame">
-						<Entry x:Name="TxtSalary" Placeholder="Salário (reais)" />
+						<Entry x:Name="TxtInitialSalary" Placeholder="Salário Inicial (reais)" />
+					</Frame>
+
+					<Frame StyleClass="EditorFrame">
+						<Entry x:Name="TxtFinalSalary" Placeholder="Salário Final (reais)" />
 					</Frame>
 
 					<Frame StyleClass="EditorFrame">
