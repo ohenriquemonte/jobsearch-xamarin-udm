@@ -53,7 +53,7 @@
 					</Grid>
 				</Frame>
 
-				<Button Text="Pesquisar" Grid.Row="1" Grid.Column="1" />
+				<Button Text="Pesquisar" Grid.Row="1" Grid.Column="1" Clicked="Search" />
 			</Grid>
 
 			<Label>
@@ -65,7 +65,7 @@
 				</Label.FormattedText>
 			</Label>
 
-			<CollectionView>
+			<CollectionView x:Name="ListOfJobs">
 				<CollectionView.EmptyView>
 					<Label Text="0 resultados" Style="{StaticResource TextPrimary}"  VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
 				</CollectionView.EmptyView>

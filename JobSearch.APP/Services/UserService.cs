@@ -19,7 +19,6 @@ namespace JobSearch.APP.Services
 
 			if (response.IsSuccessStatusCode)
 			{
-
 				responseService.Data = await response.Content.ReadAsAsync<User>();
 			}
 			else
@@ -42,7 +41,6 @@ namespace JobSearch.APP.Services
 
 			if (response.IsSuccessStatusCode)
 			{
-
 				responseService.Data = await response.Content.ReadAsAsync<User>();
 			}
 			else
