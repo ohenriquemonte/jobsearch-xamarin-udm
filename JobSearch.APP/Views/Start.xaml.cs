@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using JobSearch.APP.Models;
 using JobSearch.APP.Services;
@@ -15,6 +16,7 @@ namespace JobSearch.APP.Views
 		private JobService _service;
 		private ObservableCollection<Job> _listOfJobs;
 		private SearchParams _searchParams;
+		private int _listOfJobsFirstRequest;
 
 		public Start()
 		{
@@ -63,6 +65,7 @@ namespace JobSearch.APP.Views
 			if (responseService.IsSuccess)
 			{
 				_listOfJobs = new ObservableCollection<Job>(responseService.Data);
+				_listOfJobsFirstRequest = _listOfJobs.Count();
 				ListOfJobs.ItemsSource = _listOfJobs;
 				ListOfJobs.RemainingItemsThreshold = 1;
 			}
@@ -93,6 +96,7 @@ namespace JobSearch.APP.Views
 
 		private async void InfinitySearch(System.Object sender, System.EventArgs e)
 		{
+			ListOfJobs.RemainingItemsThreshold = -1;
 			_searchParams.NumberOfPage++;
 
 			ResponseService<List<Job>> responseService = await _service.GetJobs(_searchParams.Word, _searchParams.CityState, _searchParams.NumberOfPage);
@@ -100,11 +104,24 @@ namespace JobSearch.APP.Views
 			if (responseService.IsSuccess)
 			{
 				var listOfJobsFromService = responseService.Data;
-
 				foreach (var item in listOfJobsFromService)
 				{
 					_listOfJobs.Add(item);
 				}
+
+				if (_listOfJobsFirstRequest == listOfJobsFromService.Count())
+				{
+					ListOfJobs.RemainingItemsThreshold = 1;
+				}
+				else
+				{
+					ListOfJobs.RemainingItemsThreshold = -1;
+				}
+			}
+			else
+			{
+				await DisplayAlert("Ops!", "Ocorreu um erro inesperado na listagem! Tente Novamente mais tarde.", "OK");
+				ListOfJobs.RemainingItemsThreshold = 0;
 			}
 		}
 	}
