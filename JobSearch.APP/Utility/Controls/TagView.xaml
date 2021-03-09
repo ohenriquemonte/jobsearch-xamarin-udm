@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JobSearch.APP.Utility.Controls.TagView">
+	<ContentView.Content>
+		<StackLayout Orientation="Horizontal" x:Name="Container">
+			<!--<Frame BackgroundColor="#F7F8FA" Padding="3" HasShadow="False">
+				<Label Padding="3" Text="C#" FontFamily="MontserratLight" FontSize="10" TextColor="#8D9EAA" />
+			</Frame>
+
+			<Frame BackgroundColor="#F7F8FA" Padding="3" HasShadow="False">
+				<Label Padding="3" Text="SQL Server" FontFamily="MontserratLight" FontSize="10" TextColor="#8D9EAA" />
+			</Frame>
+
+			<Frame BackgroundColor="#F7F8FA" Padding="3" HasShadow="False">
+				<Label Padding="3" Text="ASP.NET" FontFamily="MontserratLight" FontSize="10" TextColor="#8D9EAA" />
+			</Frame>-->
+		</StackLayout>
+	</ContentView.Content>
+</ContentView>

@@ -29,6 +29,7 @@
     <Folder Include="Models\" />
     <Folder Include="Utility\Load\" />
     <Folder Include="Utility\Converters\" />
+    <Folder Include="Utility\Controls\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Utility\Fonts\Montserrat-Bold.ttf" />
