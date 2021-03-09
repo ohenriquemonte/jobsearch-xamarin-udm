@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using JobSearch.APP.Models;
 using JobSearch.APP.Services;
 using JobSearch.Domain.Models;
@@ -53,7 +54,12 @@ namespace JobSearch.APP.Views
 
 		private async void Search(System.Object sender, System.EventArgs e)
 		{
-			//await Navigation.PushPopupAsync(new Loading());
+			Loading.IsVisible = true;
+			Loading.IsRunning = true;
+			NoResult.IsVisible = false;
+
+			//System.Threading.Thread.Sleep(2000);
+			//await Task.Delay(2000);
 
 			string word = TxtSearch.Text;
 			string cityState = TxtCityState.Text;
@@ -65,33 +71,22 @@ namespace JobSearch.APP.Views
 			if (responseService.IsSuccess)
 			{
 				_listOfJobs = new ObservableCollection<Job>(responseService.Data);
-				_listOfJobsFirstRequest = _listOfJobs.Count();
+				_listOfJobsFirstRequest = _listOfJobs.Count;
 				ListOfJobs.ItemsSource = _listOfJobs;
 				ListOfJobs.RemainingItemsThreshold = 1;
 			}
 			else
 			{
-				//if (responseService.StatusCode == 400)
-				//{
-				//	StringBuilder sb = new StringBuilder();
-
-				//	foreach (var dicKey in responseService.Errors)
-				//	{
-				//		foreach (var message in dicKey.Value)
-				//		{
-				//			sb.AppendLine(message);
-				//		}
-				//	}
-
-				//	TxtMessages.Text = sb.ToString();
-				//}
-				//else
-				//{
 				await DisplayAlert("Ops!", "Ocorreu um erro inesperado! Tente Novamente mais tarde.", "OK");
-				//}
-
-				//await Navigation.PopAllPopupAsync();
 			}
+
+			if (_listOfJobs.Count == 0)
+				NoResult.IsVisible = true;
+			else
+				NoResult.IsVisible = false;
+
+			Loading.IsVisible = false;
+			Loading.IsRunning = false;
 		}
 
 		private async void InfinitySearch(System.Object sender, System.EventArgs e)
@@ -109,7 +104,7 @@ namespace JobSearch.APP.Views
 					_listOfJobs.Add(item);
 				}
 
-				if (_listOfJobsFirstRequest == listOfJobsFromService.Count())
+				if (_listOfJobsFirstRequest == listOfJobsFromService.Count)
 				{
 					ListOfJobs.RemainingItemsThreshold = 1;
 				}

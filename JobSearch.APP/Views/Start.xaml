@@ -66,55 +66,57 @@
 				</Label.FormattedText>
 			</Label>
 
-			<CollectionView x:Name="ListOfJobs" RemainingItemsThreshold="-1" RemainingItemsThresholdReached="InfinitySearch">
-				<CollectionView.EmptyView>
-					<Label Text="0 resultados" Style="{StaticResource TextPrimary}"  VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
-				</CollectionView.EmptyView>
-				<CollectionView.ItemTemplate>
-					<DataTemplate>
-						<StackLayout>
-							<pancake:PancakeView BackgroundColor="{StaticResource White}" BorderColor="{StaticResource GrayBlue}" Elevation="3" Padding="15" Margin="4">
-								<pancake:PancakeView.GestureRecognizers>
-									<TapGestureRecognizer Tapped="GoVisualizer" CommandParameter="{Binding .}" />
-								</pancake:PancakeView.GestureRecognizers>
+			<Grid>
+				<CollectionView x:Name="ListOfJobs" RemainingItemsThreshold="-1" RemainingItemsThresholdReached="InfinitySearch">
+					<CollectionView.ItemTemplate>
+						<DataTemplate>
+							<StackLayout>
+								<pancake:PancakeView BackgroundColor="{StaticResource White}" BorderColor="{StaticResource GrayBlue}" Elevation="3" Padding="15" Margin="4">
+									<pancake:PancakeView.GestureRecognizers>
+										<TapGestureRecognizer Tapped="GoVisualizer" CommandParameter="{Binding .}" />
+									</pancake:PancakeView.GestureRecognizers>
 
-								<Grid RowSpacing="0">
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition Width="3*"/>
-										<ColumnDefinition Width="2*" />
-									</Grid.ColumnDefinitions>
-									<Grid.RowDefinitions>
-										<RowDefinition Height="25" />
-										<RowDefinition />
-										<RowDefinition Height="25" />
-										<RowDefinition Height="25" />
-									</Grid.RowDefinitions>
+									<Grid RowSpacing="0">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="3*"/>
+											<ColumnDefinition Width="2*" />
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="25" />
+											<RowDefinition />
+											<RowDefinition Height="25" />
+											<RowDefinition Height="25" />
+										</Grid.RowDefinitions>
 
-									<Label Text="{Binding Company}" Grid.ColumnSpan="2" Style="{StaticResource TextSecondary}"/>
-									<Label Text="{Binding JobTitle}" Grid.Row="1" Style="{StaticResource TextPrimary}" />
-									<Label Text="{Binding CityState}" Grid.Row="2" Style="{StaticResource TextSecondary}" />
+										<Label Text="{Binding Company}" Grid.ColumnSpan="2" Style="{StaticResource TextSecondary}"/>
+										<Label Text="{Binding JobTitle}" Grid.Row="1" Style="{StaticResource TextPrimary}" />
+										<Label Text="{Binding CityState}" Grid.Row="2" Style="{StaticResource TextSecondary}" />
 
-									<control:TagView Technologies="{Binding TecnologyTools}" Grid.Row="3" NumberOfWords="2" />
+										<control:TagView Technologies="{Binding TecnologyTools}" Grid.Row="3" NumberOfWords="2" />
 
-									<StackLayout Spacing="0" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalOptions="End">
-										<Label Text="{Binding InitialSalary}" Style="{StaticResource MoneyLabel}" />
-										<Label Text="-" Style="{StaticResource CurrencyLabel}" />
-										<Label Text="{Binding FinalSalary}" Style="{StaticResource MoneyLabel}" />
-										<Label Text="&#x0a;" Style="{StaticResource CurrencyLabel}" />
-									</StackLayout>
+										<StackLayout Spacing="0" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalOptions="End">
+											<Label Text="{Binding InitialSalary}" Style="{StaticResource MoneyLabel}" />
+											<Label Text="-" Style="{StaticResource CurrencyLabel}" />
+											<Label Text="{Binding FinalSalary}" Style="{StaticResource MoneyLabel}" />
+											<Label Text="&#x0a;" Style="{StaticResource CurrencyLabel}" />
+										</StackLayout>
 
-									<Label Text=" BRL" Style="{StaticResource CurrencyLabel}" Grid.Row="2" Grid.Column="1" HorizontalOptions="End" />
+										<Label Text=" BRL" Style="{StaticResource CurrencyLabel}" Grid.Row="2" Grid.Column="1" HorizontalOptions="End" />
 
-									<StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalOptions="End">
-										<Label Text="id. " Style="{StaticResource IdLabel}" />
-										<Label Text="{Binding Id}" Style="{StaticResource IdLabel}" />
-									</StackLayout>
-								</Grid>
-							</pancake:PancakeView>
-						</StackLayout>
-					</DataTemplate>
-				</CollectionView.ItemTemplate>
-			</CollectionView>
+										<StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalOptions="End">
+											<Label Text="id. " Style="{StaticResource IdLabel}" />
+											<Label Text="{Binding Id}" Style="{StaticResource IdLabel}" />
+										</StackLayout>
+									</Grid>
+								</pancake:PancakeView>
+							</StackLayout>
+						</DataTemplate>
+					</CollectionView.ItemTemplate>
+				</CollectionView>
+
+				<Label Text="0 resultados" x:Name="NoResult" IsVisible="false" Style="{StaticResource TextPrimary}"  VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+				<ActivityIndicator x:Name="Loading" IsRunning="False" HorizontalOptions="Center" VerticalOptions="Center" />
+			</Grid>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
