@@ -93,28 +93,22 @@
 									<Label Text="{Binding Company}" Grid.ColumnSpan="2" Style="{StaticResource TextSecondary}"/>
 									<Label Text="{Binding JobTitle}" Grid.Row="1" Style="{StaticResource TextPrimary}" />
 									<Label Text="{Binding CityState}" Grid.Row="2" Style="{StaticResource TextSecondary}" />
+
 									<control:TagView Technologies="{Binding TecnologyTools}" Grid.Row="3" NumberOfWords="2" />
 
-									<Label Text="7.0-11k BRL" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" HorizontalTextAlignment="End">
-										<Label.FormattedText>
-											<FormattedString>
-												<Span Text="{Binding InitialSalary}" Style="{StaticResource MoneyLabel}" />
-												<Span Text=" - " Style="{StaticResource CurrencyLabel}" />
-												<Span Text="{Binding FinalSalary}" Style="{StaticResource MoneyLabel}" />
-												<Span Text="&#x0a;" Style="{StaticResource CurrencyLabel}" />
-												<Span Text=" BRL" Style="{StaticResource CurrencyLabel}" />
-											</FormattedString>
-										</Label.FormattedText>
-									</Label>
+									<StackLayout Spacing="0" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalOptions="End">
+										<Label Text="{Binding InitialSalary}" Style="{StaticResource MoneyLabel}" />
+										<Label Text="-" Style="{StaticResource CurrencyLabel}" />
+										<Label Text="{Binding FinalSalary}" Style="{StaticResource MoneyLabel}" />
+										<Label Text="&#x0a;" Style="{StaticResource CurrencyLabel}" />
+									</StackLayout>
 
-									<Label Grid.Row="3" Grid.Column="1" Style="{StaticResource IdLabel}">
-										<Label.FormattedText>
-											<FormattedString>
-												<Span Text="id. " />
-												<Span Text="{Binding Id}" />
-											</FormattedString>
-										</Label.FormattedText>
-									</Label>
+									<Label Text=" BRL" Style="{StaticResource CurrencyLabel}" Grid.Row="2" Grid.Column="1" HorizontalOptions="End" />
+
+									<StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalOptions="End">
+										<Label Text="id. " Style="{StaticResource IdLabel}" />
+										<Label Text="{Binding Id}" Style="{StaticResource IdLabel}" />
+									</StackLayout>
 								</Grid>
 							</pancake:PancakeView>
 						</StackLayout>
