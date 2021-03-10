@@ -27,7 +27,11 @@ namespace JobSearch.APP.Views
 
 		void GoVisualizer(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new Visualizer());
+			var eventArgs = (TappedEventArgs)e;
+			var page = new Visualizer();
+			page.BindingContext = eventArgs.Parameter;
+
+			Navigation.PushAsync(page);
 		}
 
 		void GoRegisterJob(System.Object sender, System.EventArgs e)

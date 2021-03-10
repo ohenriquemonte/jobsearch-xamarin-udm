@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JobSearch.APP.Views.Visualizer">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 xmlns:control="clr-namespace:JobSearch.APP.Utility.Controls"
+			 x:Class="JobSearch.APP.Views.Visualizer">
 	<ContentPage.Content>
 		<StackLayout>
 			<Grid>
@@ -33,28 +36,30 @@
 							<RowDefinition />
 						</Grid.RowDefinitions>
 
-						<Label Text="Digital Ocean" Style="{StaticResource TextSecondary}"/>
-						<Label Text="Back-End Developer" Grid.Row="1" Style="{StaticResource TextPrimary}" />
-						<Label Text="São Paulo, SP" Grid.Row="2" Style="{StaticResource TextSecondary}" />
+						<Label Text="{Binding Company}" Style="{StaticResource TextSecondary}"/>
+						<Label Text="{Binding JobTitle}" Grid.Row="1" Style="{StaticResource TextPrimary}" />
+						<Label Text="{Binding CityState}" Grid.Row="2" Style="{StaticResource TextSecondary}" />
 
 
 						<Label Text="7.0-11k BRL" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
 							<Label.FormattedText>
 								<FormattedString>
-									<Span Text="7.0000-11.000" Style="{StaticResource MoneyLabel}" />
+									<Span Text="{Binding InitialSalary}" Style="{StaticResource MoneyLabel}" />
+									<Span Text="-" Style="{StaticResource MoneyLabel}" />
+									<Span Text="{Binding FinalSalary}" Style="{StaticResource MoneyLabel}" />
 									<Span Text=" BRL" Style="{StaticResource CurrencyLabel}" />
 								</FormattedString>
 							</Label.FormattedText>
 						</Label>
 
-						<Label Text="CLT" Grid.Row="4" Style="{StaticResource TextPrimary}" />
-						<Label Text="Tags" Grid.Row="5" />
+						<Label Text="{Binding ContractType}" Grid.Row="4" Style="{StaticResource TextPrimary}" />
+						<control:TagView Technologies="{Binding TecnologyTools}" Grid.Row="5" NumberOfWords="20"  />
 
 						<Label Grid.Row="0" Grid.Column="1" Style="{StaticResource TextPrimary}" HorizontalOptions="End">
 							<Label.FormattedText>
 								<FormattedString>
 									<Span Text="Pub. " />
-									<Span Text="02/02/2020" />
+									<Span Text="{Binding PublicationDate, StringFormat='{0:dd/MM/yyyy}'}" />
 								</FormattedString>
 							</Label.FormattedText>
 						</Label>
@@ -63,27 +68,27 @@
 							<Label.FormattedText>
 								<FormattedString>
 									<Span Text="id. " />
-									<Span Text="23145" />
+									<Span Text="{Binding Id}" />
 								</FormattedString>
 							</Label.FormattedText>
 						</Label>
 					</Grid>
 
 					<Label Style="{StaticResource TextPrimary}" Text="Interesados enviar e-mail para: " />
-					<Label Style="{StaticResource TextSecondary}" Text="job@digitalocean.com" />
+					<Label Style="{StaticResource TextSecondary}" Text="{Binding InterestedSendEmailTo}" />
 					<BoxView Color="#F3F5F7" HeightRequest="1" />
 
 					<Label Style="{StaticResource TitlePrimary}" Text="Descrição da empresa" />
+					<Label Style="{StaticResource TextPrimary}" Text="{Binding CompanyDescription}" />
+					<!--<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
 					<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
-					<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
-					<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
-					<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
+					<Label Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americano de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />-->
 
 					<Label Style="{StaticResource TitlePrimary}" Text="Descrição do trabalho" />
-					<Label Style="{StaticResource TextPrimary}" Text="Implementar novas tecnologias de gerenciamento de servidores, fazer integração com ferramentas de VM." />
+					<Label Style="{StaticResource TextPrimary}" Text="{Binding JobDescription}" />
 
 					<Label Style="{StaticResource TitlePrimary}" Text="Benefícios" />
-					<Label Style="{StaticResource TextPrimary}" Text="Vale transporte Vale alimentação" />
+					<Label Style="{StaticResource TextPrimary}" Text="{Binding Benefits}" />
 				</StackLayout>
 			</ScrollView>
 		</StackLayout>
